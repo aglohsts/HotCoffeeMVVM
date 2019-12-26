@@ -80,14 +80,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ReL-MK-36f">
-                                <rect key="frame" x="104" y="534" width="206" height="32"/>
-                                <segments>
-                                    <segment title="Small"/>
-                                    <segment title="Medium"/>
-                                    <segment title="Large"/>
-                                </segments>
-                            </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Stz-If-YHF">
                                 <rect key="frame" x="107" y="605" width="200" height="34"/>
                                 <constraints>
@@ -109,22 +101,26 @@
                         <constraints>
                             <constraint firstItem="Stz-If-YHF" firstAttribute="centerX" secondItem="eXg-LP-Jyc" secondAttribute="centerX" id="3Gh-2w-UcS"/>
                             <constraint firstItem="7Kb-4T-wan" firstAttribute="centerX" secondItem="eXg-LP-Jyc" secondAttribute="centerX" id="FVw-gt-cze"/>
-                            <constraint firstItem="Stz-If-YHF" firstAttribute="top" secondItem="ReL-MK-36f" secondAttribute="bottom" constant="40" id="JvF-Rp-Myl"/>
                             <constraint firstItem="gbd-zs-OfH" firstAttribute="width" secondItem="eXg-LP-Jyc" secondAttribute="width" id="M7S-8i-IHE"/>
                             <constraint firstItem="7Kb-4T-wan" firstAttribute="top" secondItem="Stz-If-YHF" secondAttribute="bottom" constant="22" id="TTz-XQ-B4j"/>
-                            <constraint firstItem="ReL-MK-36f" firstAttribute="top" secondItem="gbd-zs-OfH" secondAttribute="bottom" constant="57" id="UOJ-rS-tg8"/>
                             <constraint firstItem="gbd-zs-OfH" firstAttribute="top" secondItem="scU-nE-dxx" secondAttribute="top" id="kF6-wM-BLD"/>
+                            <constraint firstItem="Stz-If-YHF" firstAttribute="top" secondItem="gbd-zs-OfH" secondAttribute="bottom" constant="128" id="nNi-VN-8W7"/>
                             <constraint firstItem="gbd-zs-OfH" firstAttribute="height" secondItem="eXg-LP-Jyc" secondAttribute="height" multiplier="0.5" id="phk-xG-htA"/>
-                            <constraint firstItem="ReL-MK-36f" firstAttribute="centerX" secondItem="eXg-LP-Jyc" secondAttribute="centerX" id="xPB-AD-t5E"/>
                             <constraint firstItem="gbd-zs-OfH" firstAttribute="leading" secondItem="scU-nE-dxx" secondAttribute="leading" id="xl0-ac-1pf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="scU-nE-dxx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Order" id="TTF-Kh-GSf">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="fiZ-Z5-H1v"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="leU-bG-eR2"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="leU-bG-eR2">
+                            <connections>
+                                <action selector="save" destination="u8i-vC-ncO" id="gPq-os-aCk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emailTextField" destination="7Kb-4T-wan" id="KlR-xl-H5I"/>
+                        <outlet property="nameTextField" destination="Stz-If-YHF" id="Fcy-90-etC"/>
                         <outlet property="tableView" destination="gbd-zs-OfH" id="pgc-5z-BTr"/>
                     </connections>
                 </viewController>

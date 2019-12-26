@@ -10,7 +10,7 @@ import Foundation
 
 enum CoffeeType: String, Codable, CaseIterable {
     
-    case cappuccino
+    case cappucino
     case latte
     case espressino
     case cortado
