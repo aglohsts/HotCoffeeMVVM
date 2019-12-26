@@ -41,6 +41,8 @@ class AddOrderViewController: UIViewController, UITableViewDelegate, UITableView
         self.coffeeSizesSegmentedControl.topAnchor.constraint(equalTo: self.tableView.bottomAnchor, constant: 20).isActive = true
         
         self.coffeeSizesSegmentedControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        
+        self.coffeeSizesSegmentedControl.selectedSegmentIndex = 0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -80,5 +82,15 @@ class AddOrderViewController: UIViewController, UITableViewDelegate, UITableView
         self.vm.email = email
         self.vm.selectedSize = selectedSize
         self.vm.selectedType = self.vm.types[indexPath.row]
+        
+        Webservice().load(resource: Order.create(vm: self.vm), completion: { (result) in
+            
+            switch result {
+                
+            case .success(let order): print(order)
+                
+            case .failure(let error): print(error)
+            }
+        })
     }
 }
